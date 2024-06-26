@@ -1,0 +1,14 @@
+body {
+    color: #484848;
+    font: 14px Circular ,"Helvetica Neue", Helvetica,Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto
+}

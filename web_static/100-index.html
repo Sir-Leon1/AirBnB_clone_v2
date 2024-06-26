@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles/4-common.css">
+    <link rel="stylesheet" href="styles/3-header.css">
+    <link rel="stylesheet" href="styles/3-footer.css">
+    <link rel="stylesheet" href="styles/6-filters.css">
+    <link rel="stylesheet" href="styles/100-places.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png"
+          href="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon.png">
+    <title>AirBnB Clone</title>
+</head>
+<body>
+<header></header>
+<div class="container">
+    <section class="filters">
+        <div class="locations">
+            <h3>States</h3>
+            <h4>California, Arizona...</h4>
+            <div class="popover">
+                <h2>New York:</h2>
+                <ul>
+                    <li>Buffalo</li>
+                    <li>New York City</li>
+                </ul>
+                <h2>Virginia:</h2>
+                <ul>
+                    <li>Richmond</li>
+                    <li>Charlottesville</li>
+                </ul>
+            </div>
+        </div>
+        <div class="amenities">
+            <h3>Amenities</h3>
+            <h4>Internet, Kitchen...</h4>
+            <div class="popover">
+                <ul>
+                    <li>Internet</li>
+                    <li>TV</li>
+                    <li>Kitchen</li>
+                    <li>Iron</li>
+                </ul>
+            </div>
+        </div>
+        <button>Search</button>
+    </section>
+
+    <section class="places">
+        <h1>Places</h1>
+        <article>
+            <div class="name_and_prices">
+                <h2>Pillow Front Fort</h2>
+                <div class="price_by_night">&#36;7</div>
+            </div>
+            <div class="information">
+                <div class="max_guests">
+                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                    <br>2 Guests
+                </div>
+                <div class="number_rooms">
+                    <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+                    <br>1 Room
+                </div>
+                <div class="number_bathrooms">
+                    <i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+                    <br>0 Bathrooms
+                </div>
+            </div>
+            <div class="user">
+                <strong>Owner:</strong> Ivy Bells
+            </div>
+            <div class="description">
+                Cramped yet...(cute? pre-school-ey? nvm.), one-bedroom pillow fort
+                constructed by my, err, creative, 4-year-old son. Features hand-me-down
+                blanket beds. Being a pillow fort, it has no electricity, plumbing,
+                internet, or essentially any amenities whatsoever. But, at least
+                it has a nice aroma of dino chicken nuggets? Hey, it's cheap!!
+            </div>
+
+            <div class="amenities">
+                <h2>Amenities</h2>
+                <ul>
+                    <li>
+                        <i class="fa fa-gamepad" aria-hidden="true"></i>
+                        <p>Video games</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-shower" aria-hidden="true"></i>
+                        <p>Shower</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-fire" aria-hidden="true"></i>
+                        <p>Litness</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="reviews">
+                <h2>2 Reviews</h2>
+                <h3>From Jonny on June 18, 2017</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Had the dankest stay here, thanks bois!
+                        </p>
+                    </li>
+                </ul>
+                <h3>From Carson on April 22, 2018</h3>
+                <ul>
+                    <li>
+                        <p>
+                            You bros know what I'm talking about. You know. Stay lit.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+
+        <article>
+            <div class="name_and_prices">
+                <h2>Modern Apartment</h2>
+                <div class="price_by_night">&#36;78</div>
+            </div>
+            <div class="information">
+                <div class="max_guests">
+                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                    <br>4 Guests
+                </div>
+
+                <div class="number_rooms">
+                    <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+                    <br>2 Rooms
+                </div>
+                <div class="number_bathrooms">
+                    <i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+                    <br>1 Bathroom
+                </div>
+            </div>
+            <div class="user">
+                <strong>Owner:</strong> John Doe
+            </div>
+            <div class="description">
+                Spacious and modern two-bedroom apartment in the heart of the city. Features all amenities including
+                high-speed internet, a fully-equipped kitchen, and a balcony with a stunning view of the skyline.
+                Perfect for a city getaway!
+            </div>
+
+            <div class="amenities">
+                <h2>Amenities</h2>
+                <ul>
+                    <li>
+                        <i class="fa fa-wifi" aria-hidden="true"></i>
+                        <p>Free Wi-Fi</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-television" aria-hidden="true"></i>
+                        <p>Smart TV</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-coffee" aria-hidden="true"></i>
+                        <p>Coffee Maker</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="reviews">
+                <h2>3 Reviews</h2>
+                <h3>From Alice on May 10, 2018</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Great location and very comfortable apartment.
+                        </p>
+                    </li>
+                </ul>
+                <h3>From Bob on August 12, 2019</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Enjoyed the smart TV and the Wi-Fi was fast.
+                        </p>
+                    </li>
+                </ul>
+                <h3>From Charlie on December 5, 2020</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Nice and cozy place. The coffee maker was a nice touch.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+
+        <article>
+            <div class="name_and_prices">
+                <h2>Cozy Cottage</h2>
+                <div class="price_by_night">&#36;13</div>
+            </div>
+            <div class="information">
+                <div class="max_guests">
+                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                    <br>3 Guests
+                </div>
+                <div class="number_rooms">
+                    <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+                    <br>2 Rooms
+                </div>
+                <div class="number_bathrooms">
+                    <i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+                    <br>1 Bathroom
+                </div>
+            </div>
+            <div class="user">
+                <strong>Owner:</strong> Jane Smith
+            </div>
+            <div class="description">
+                Quaint and cozy cottage nestled in the countryside. This charming retreat offers two bedrooms, a
+                well-equipped kitchen, and a beautiful garden. Ideal for a peaceful weekend away from the hustle and
+                bustle.
+            </div>
+
+            <div class="amenities">
+                <h2>Amenities</h2>
+                <ul>
+                    <li>
+                        <i class="fa fa-fire" aria-hidden="true"></i>
+                        <p>Fireplace</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-tree" aria-hidden="true"></i>
+                        <p>Garden</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-paw" aria-hidden="true"></i>
+                        <p>Pet Friendly</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="reviews">
+                <h2>5 Reviews</h2>
+                <h3>From Emily on March 15, 2019</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Loved the fireplace and the garden. Perfect for our dog.
+                        </p>
+                    </li>
+                </ul>
+                <h3>From Frank on June 25, 2019</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Cozy cottage with beautiful surroundings.
+                        </p>
+                    </li>
+                </ul>
+                <h3>From Grace on September 10, 2020</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Great place for a weekend getaway.
+                        </p>
+                    </li>
+                </ul>
+                <h3>From Henry on November 22, 2020</h3>
+                <ul>
+                    <li>
+                        <p>
+                            The garden was lovely, and the cottage was very comfortable.
+                        </p>
+                    </li>
+                </ul>
+                <h3>From Irene on February 1, 2021</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Perfect spot for a peaceful retreat.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+
+        <article>
+            <div class="name_and_prices">
+                <h2>Luxury Boat</h2>
+                <div class="price_by_night">&#36;10</div>
+            </div>
+            <div class="information">
+                <div class="max_guests">
+                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                    <br>6 Guests
+                </div>
+                <div class="number_rooms">
+                    <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+                    <br>3 Rooms
+                </div>
+                <div class="number_bathrooms">
+                    <i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+                    <br>2 Bathrooms
+                </div>
+            </div>
+            <div class="user">
+                <strong>Owner:</strong> Captain Jack
+            </div>
+            <div class="description">
+                Sail away on a luxury boat with three bedrooms and two bathrooms. Enjoy the sea breeze and stunning
+                ocean views. Perfect for a family vacation or a romantic getaway. All modern amenities included.
+            </div>
+
+            <div class="amenities">
+                <h2>Amenities</h2>
+                <ul>
+                    <li>
+                        <i class="fa fa-anchor" aria-hidden="true"></i>
+                        <p>Anchoring</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-life-ring" aria-hidden="true"></i>
+                        <p>Life Jackets</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-sun-o" aria-hidden="true"></i>
+                        <p>Sun Deck</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="reviews">
+                <h2>4 Reviews</h2>
+                <h3>From Mark on July 20, 2020</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Incredible experience! The boat was luxurious and the views were breathtaking.
+                        </p>
+                    </li>
+                </ul>
+                <h3>From Susan on September 10, 2021</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Had a wonderful time on the boat. The amenities were top-notch.
+                        </p>
+                    </li>
+                </ul>
+                <h3>From Alex on December 25, 2021</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Spent Christmas on the boat. It was an unforgettable experience!
+                        </p>
+                    </li>
+                </ul>
+                <h3>From Kelly on March 15, 2022</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Amazing holiday on the boat. The kids loved it!
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+
+        <article>
+            <div class="name_and_prices">
+                <h2>Adventure RV</h2>
+                <div class="price_by_night">&#36;15</div>
+            </div>
+            <div class="information">
+                <div class="max_guests">
+                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                    <br>4 Guests
+                </div>
+                <div class="number_rooms">
+                    <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+                    <br>2 Rooms
+                </div>
+                <div class="number_bathrooms">
+                    <i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+                    <br>1 Bathroom
+                </div>
+            </div>
+            <div class="user">
+                <strong>Owner:</strong> Road Ranger
+            </div>
+            <div class="description">
+                Hit the road in style with this fully-equipped RV. Features two bedrooms, a kitchen, and a bathroom.
+                Ideal for road trips and outdoor adventures. Enjoy the freedom of the open road with all the comforts of
+                home.
+            </div>
+
+            <div class="amenities">
+                <h2>Amenities</h2>
+                <ul>
+                    <li>
+                        <i class="fa fa-bolt" aria-hidden="true"></i>
+                        <p>Solar Panels</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+                        <p>Air Conditioning</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-music" aria-hidden="true"></i>
+                        <p>Sound System</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="reviews">
+                <h2>2 Reviews</h2>
+                <h3>From Bella on May 14, 2019</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Fantastic RV! Had everything we needed for our trip.
+                        </p>
+                    </li>
+                </ul>
+                <h3>From Jake on August 30, 2020</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Very comfortable and well-equipped. Made our vacation perfect.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+
+        <article>
+            <div class="name_and_prices">
+                <h2>City Flats</h2>
+                <div class="price_by_night">&#36;5</div>
+            </div>
+            <div class="information">
+                <div class="max_guests">
+                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                    <br>5 Guests
+                </div>
+                <div class="number_rooms">
+                    <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+                    <br>3 Rooms
+                </div>
+                <div class="number_bathrooms">
+                    <i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+                    <br>2 Bathrooms
+                </div>
+            </div>
+            <div class="user">
+                <strong>Owner:</strong> Sarah Lee
+            </div>
+            <div class="description">
+                Modern and spacious city flats located in the heart of downtown. Features three bedrooms and two
+                bathrooms. Enjoy the vibrant city life with easy access to restaurants, shops, and entertainment.
+                Perfect for families or groups.
+            </div>
+
+            <div class="amenities">
+                <h2>Amenities</h2>
+                <ul>
+                    <li>
+                        <i class="fa fa-building" aria-hidden="true"></i>
+                        <p>Elevator</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-car" aria-hidden="true"></i>
+                        <p>Parking</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-heartbeat" aria-hidden="true"></i>
+                        <p>Gym</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="reviews">
+                <h2>3 Reviews</h2>
+                <h3>From Lily on April 10, 2021</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Perfect location and very modern. Loved our stay!
+                        </p>
+                    </li>
+                </ul>
+                <h3>From Chris on July 5, 2021</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Great flat, well-furnished and close to everything.
+                        </p>
+                    </li>
+                </ul>
+                <h3>From Anna on September 9, 2021</h3>
+                <ul>
+                    <li>
+                        <p>
+                            Spacious and clean. The parking was very convenient.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </section>
+</div>
+<footer>Best School</footer>
+</body>
+</html>
