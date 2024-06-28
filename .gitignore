@@ -4,3 +4,6 @@
 *.o
 *.pyc
 *.idea
+*main*
+main*
+main_delete.py

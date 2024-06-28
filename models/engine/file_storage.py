@@ -21,7 +21,7 @@ class FileStorage:
             if type(cls) == str:
                 cls = eval(cls)
             cls_dict = {}
-            for key, value in self.__object.items():
+            for key, value in self.__objects.items():
                 if type(value) == cls:
                     cls_dict[key] = value
                 return cls_dict
