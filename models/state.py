@@ -1,13 +1,16 @@
 #!/usr/bin/python3
 """Defines the state class."""
-from models.base_model import BaseModel
+
+from models.base_model import BaseModel, Base
+from sqlalchemy import Column, String
 
 
-class State(BaseModel):
+class State(BaseModel, Base):
     """Represent a state.
 
     Attributes:
     name (str): The name of the state
     """
 
-    name = ""
+    __tablename__ = 'states'
+    name = Column(String(128), nullable=False)
