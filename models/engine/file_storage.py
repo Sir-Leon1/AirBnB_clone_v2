@@ -16,21 +16,20 @@ class FileStorage:
     __objects = {}
 
     def all(self, cls=None):
-        """Return the dictionary __objects.__"""
+        """Return a dictionary of instantiated objects in __objects.
+
+        If a cls is specified, returns a dictionary of objects of that type,
+        Otherwise, returns the __objects dictionary.
+        """
         if cls is not None:
             if type(cls) == str:
                 cls = eval(cls)
-            cls_dict = {}
-            for key, value in self.__objects.items():
-                if type(value) == cls:
-                    cls_dict[key] = value
-                return cls_dict
+            return {key: obj for key, obj in self.__objects.items() if isinstance(obj, cls)}
         return self.__objects
 
     def new(self, obj):
         """Set in __objects obj with key <obj_class_name>.id"""
-        ocname = obj.__class__.__name__
-        FileStorage.__objects["{}.{}".format(ocname, obj.id)] = obj
+        self.__objects["{}.{}".format(type(obj).__name__, obj.id)] = obj
 
     def save(self):
         """Serialize __objects to the JSON file __file_path."""
