@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Defines the user class."""
 
-from sqlalchemy import Column, String
+from sqlalchemy import Column, String, relationship
 from models.base_model import BaseModel, Base
 
 
@@ -19,5 +19,6 @@ class User(BaseModel, Base):
 
     email = Column(String(128), nullable=False)
     password = Column(String(128), nullable=False)
-    first_name = Column(String(128), nullable=False)
-    last_name = Column(String(128), nullable=False)
+    first_name = Column(String(128))
+    last_name = Column(String(128))
+    places = relationship("Place", back_populates="user", cascade="all, delete-orphan")
