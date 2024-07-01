@@ -7,6 +7,7 @@ from models.amenity import Amenity
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String, ForeignKey, Integer, Float
 from sqlalchemy.orm import relationship
+from sqlalchemy import Table
 
 from models.review import Review
 
@@ -28,6 +29,14 @@ class Place(BaseModel, Base):
     amenity_ids (list): A list of Amenity ids
     """
 
+    association_table = Table("place_amenity", Base.metadata,
+                              Column("place_id", String(60),
+                                     ForeignKey("places.id"),
+                                     primary_key=True, nullable=False),
+                              Column("amenity_id", String(60),
+                                     ForeignKey("amenities.id"),
+                                     primary_key=True, nullable=False))
+
     __tablename__ = 'places'
 
     city_id = Column(String(60), ForeignKey('cities.id'), nullable=False)
@@ -43,6 +52,8 @@ class Place(BaseModel, Base):
     user = relationship("User", back_populates="places")
     cities = relationship("City", back_populates="places")
     reviews = relationship("Review", backref="place", cascade="all, delete")
+    amenities = relationship("Amenity", secondary="place_amenity",
+                             viewonly=False)
     amenity_ids = []
 
     if getenv("HBNB_TYPE_STORAGE", None) != "db":
