@@ -26,9 +26,10 @@ printf %s "server {
 	index	index.html index.htm;
 
 	location /hbnb_static {
-	    alias /data/web_static/current/;
-	    index index.html index.htm;
 	    try_files \$uri \$uri/ =404;
+	    alias /data/web_static/current/;
+	    index 0-index.html index.html index.htm;
+	    add_header X-Served-By $HOSTNAME;
 	}
 
 	location /redirect_me {
