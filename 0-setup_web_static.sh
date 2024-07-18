@@ -28,7 +28,7 @@ printf %s "server {
 	location /hbnb_static {
 	    alias /data/web_static/current/;
 	    index index.html index.htm;
-	    try_files $uri $uri/ =404;
+	    try_files \$uri \$uri/ =404;
 	}
 
 	location /redirect_me {
