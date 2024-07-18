@@ -3,8 +3,12 @@
 # using the function deploy
 from datetime import datetime
 import os.path
-
 from fabric.api import run, env, local, put
+
+"""Set the remote host"""
+env.hosts = ["34.227.94.151", "52.201.220.15"]
+env.user = "ubuntu"
+env.key_filename = "~/.ssh/id_rsa"
 
 
 def do_pack():
@@ -33,49 +37,51 @@ def do_deploy(archive_path):
         return False
     if (
         run(
-            "rm -rf /data/web_static/releases/{}/".format(name)
+            "sudo rm -rf /data/web_static/releases/{}/".format(name)
         ).failed
         is True
     ):
         return False
     if (
-        run("mkdir /data/web_static/releases/{}/".format(name)).failed
+        run(
+            "sudo mkdir -p /data/web_static/releases/{}/".format(name)
+        ).failed
         is True
     ):
         return False
     if (
         run(
-            "tar -xzf /tmp/{} -C /data/web_static_releases/{}/".format(
+            "sudo tar -xzf /tmp/{} -C /data/web_static/releases/{}/".format(
                 file, name
             )
         ).failed
         is True
     ):
         return False
-    if run("rm -rf /tmp/{}".format(file)).failed is True:
+    if run("sudo rm -rf /tmp/{}".format(file)).failed is True:
         return False
     if (
         run(
-            "mv /data/web_static/releases/{}/web_static/*"
-            "/data/web_static/releases/{}/".format(name, name)
+            "sudo mv /data/web_static/releases/{}/web_static/*"
+            " /data/web_static/releases/{}/".format(name, name)
         ).failed
         is True
     ):
         return False
     if (
         run(
-            "rm -rf /data/web_static/releases/{}/web_static".format(
+            "sudo rm -rf /data/web_static/releases/{}/web_static".format(
                 name
             )
         ).failed
         is True
     ):
         return False
-    if run("rm -rf /data/web_static/current").failed is True:
+    if run("sudo rm -rf /data/web_static/current").failed is True:
         return False
     if (
         run(
-            "ln -sf /data/web_static/releases/{}/"
+            "sudo ln -sf /data/web_static/releases/{}/"
             " /data/web_static/current".format(
                 name
             )
