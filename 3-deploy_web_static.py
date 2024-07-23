@@ -29,6 +29,8 @@ def do_pack():
             return None
     if local("tar -cvzf {} web_static".format(file)).failed is True:
         return None
+    size = os.path.getsize(file)
+    print(f"web_static packed: {file} -> {size}Bytes)")
     return file
 
 
@@ -96,6 +98,7 @@ def do_deploy(archive_path):
         is True
     ):
         return False
+    print("New version deployed!")
     return True
 
 

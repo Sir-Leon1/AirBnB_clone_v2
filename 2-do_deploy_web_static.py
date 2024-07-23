@@ -73,4 +73,5 @@ def do_deploy(archive_path):
         is True
     ):
         return False
+    print("New version deployed!")
     return True
