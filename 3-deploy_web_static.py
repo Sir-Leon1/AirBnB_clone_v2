@@ -3,14 +3,20 @@
 # using the function deploy
 from datetime import datetime
 import os.path
-from fabric.api import run, env, local, put
+from fabric.api import run, env, local, put, task, runs_once
 
 """Set the remote host"""
 env.hosts = ["34.227.94.151", "52.201.220.15"]
 env.user = "ubuntu"
 env.key_filename = "~/.ssh/id_rsa"
 
+env.roledefs = {
+    'hosts': [env.hosts[0]],
+}
 
+
+@runs_once
+@task
 def do_pack():
     """Create a tar gzipped archive of the directory web_static"""
     dt = datetime.now()
@@ -26,6 +32,7 @@ def do_pack():
     return file
 
 
+@task
 def do_deploy(archive_path):
     """Distributes an archive to the web servers"""
     if os.path.isfile(archive_path) is False:
@@ -92,6 +99,7 @@ def do_deploy(archive_path):
     return True
 
 
+@task
 def deploy():
     """Calls the do_pack function store path to created archive
     Call the do_deploy function with the path
