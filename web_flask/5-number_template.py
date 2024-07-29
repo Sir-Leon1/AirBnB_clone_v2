@@ -62,7 +62,7 @@ def number(n):
     return f"{n} is a number"
 
 
-@app.route("/number_template/<n>", strict_slashes=False)
+@app.route("/number_template/<int:n>", strict_slashes=False)
 def number_template(n):
     """Route that renders a template with n passed as a variable.
 
