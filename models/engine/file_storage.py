@@ -12,6 +12,7 @@ from models.review import Review
 
 class FileStorage:
     """Represent an abstract storage engine"""
+
     __file_path = "file.json"
     __objects = {}
 
@@ -24,7 +25,10 @@ class FileStorage:
         if cls is not None:
             if type(cls) == str:
                 cls = eval(cls)
-            return {key: obj for key, obj in self.__objects.items() if isinstance(obj, cls)}
+            return {
+                key: obj for key, obj in self.__objects.items()
+                if isinstance(obj, cls)
+            }
         return self.__objects
 
     def new(self, obj):
