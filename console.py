@@ -171,7 +171,6 @@ class HBNBCommand(cmd.Cmd):
         except NameError:
             print("** class doesn't exist **")
 
-
     def do_count(self, arg):
         """Usage : count <class> or <class>.count()
         Retrieve the number of instances of a given class."""
