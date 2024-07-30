@@ -19,6 +19,11 @@ class BaseModel:
     created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
     updated_at = Column(DateTime, nullable=False, default=datetime.utcnow)
 
+    __table_args__ = {
+        'mysql_engine': 'InnoDB',
+        'mysql_charset': 'latin1'
+    }
+
     def __init__(self, *args, **kwargs):
         """Initialize a new basemodel."""
 

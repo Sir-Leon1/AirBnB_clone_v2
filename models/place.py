@@ -35,7 +35,10 @@ class Place(BaseModel, Base):
                                      primary_key=True, nullable=False),
                               Column("amenity_id", String(60),
                                      ForeignKey("amenities.id"),
-                                     primary_key=True, nullable=False))
+                                     primary_key=True, nullable=False),
+                              mysql_engine="InnoDB",
+                              mysql_charset="latin1"
+                              )
 
     __tablename__ = 'places'
 
@@ -54,6 +57,12 @@ class Place(BaseModel, Base):
     reviews = relationship("Review", backref="place", cascade="all, delete")
     amenities = relationship("Amenity", secondary="place_amenity",
                              viewonly=False)
+
+    __table_args__ = {
+        'mysql_engine': 'InnoDB',
+        'mysql_charset': 'latin1'
+    }
+
     amenity_ids = []
 
     if getenv("HBNB_TYPE_STORAGE", None) != "db":

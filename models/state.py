@@ -18,6 +18,11 @@ class State(BaseModel, Base):
     __tablename__ = 'states'
     name = Column(String(128), nullable=False)
 
+    __table_args__ = {
+        'mysql_engine': 'InnoDB',
+        'mysql_charset': 'latin1'
+    }
+
     if getenv("HBNB_TYPE_STORAGE") != "db":
         @property
         def cities(self):

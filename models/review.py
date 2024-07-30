@@ -21,3 +21,9 @@ class Review(BaseModel, Base):
     text = Column(String(1024), nullable=False)
     user = relationship('User', back_populates='reviews')
 
+    __table_args__ = {
+        'mysql_engine': 'InnoDB',
+        'mysql_charset': 'latin1'
+    }
+
+
