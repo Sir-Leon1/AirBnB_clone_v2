@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """Defines the baseModel class."""
-import sys
-sys.path.append('/home/sir-leon1/CoDe/Python/alx-higher_level_programming/BnBVenv/lib/python3.10/site-packages')
 import models
 from uuid import uuid4
 from datetime import datetime
