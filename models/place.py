@@ -56,7 +56,7 @@ class Place(BaseModel, Base):
     cities = relationship("City", back_populates="places")
     reviews = relationship("Review", backref="place", cascade="all, delete")
     amenities = relationship("Amenity", secondary="place_amenity",
-                             viewonly=False)
+                             viewonly=False, back_populates="place_amenities")
 
     __table_args__ = {
         'mysql_engine': 'InnoDB',
