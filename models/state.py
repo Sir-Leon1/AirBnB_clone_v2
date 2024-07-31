@@ -23,7 +23,7 @@ class State(BaseModel, Base):
         'mysql_charset': 'latin1'
     }
 
-    if getenv("HBNB_TYPE_STORAGE") != "db":
+    if getenv("HBNB_TYPE_STORAGE") == "db":
         @property
         def cities(self):
             """Get a list of all related City objects."""
