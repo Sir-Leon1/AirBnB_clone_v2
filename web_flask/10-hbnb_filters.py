@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Flask web application to list states
+Flask web application to list states and amenities
 """
 
 from flask import Flask, render_template
@@ -11,9 +11,13 @@ app = Flask(__name__)
 
 @app.route("/hbnb_filters", strict_slashes=False)
 def states_list():
+    """
+    Displays an HTML page with a list of all State and Amenity objects.
+    """
     states = storage.all("State")
     amenities = storage.all("Amenity")
-    return render_template("10-hbnb_filters.html", states=states, amenities=amenities)
+    return render_template("10-hbnb_filters.html",
+                           states=states, amenities=amenities)
 
 
 @app.teardown_appcontext

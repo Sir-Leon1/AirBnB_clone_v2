@@ -12,7 +12,8 @@ app = Flask(__name__)
 @app.route("/states", strict_slashes=False)
 def states_list():
     """
-    Displays an HTML page with a list of all State objects present in DBStorage.
+    Displays an HTML page with a list of all
+    State objects present in DBStorage.
     """
     states = storage.all("State")
     return render_template("9-states.html", states=states)
@@ -21,7 +22,8 @@ def states_list():
 @app.route("/states/<id>", strict_slashes=False)
 def states_list_id(id):
     """
-    Displays an HTML page with a list of all State objects present in DBStorage.
+    Displays an HTML page with a list of all State
+    objects present in DBStorage.
     """
     states = storage.all("State")
     state = None
